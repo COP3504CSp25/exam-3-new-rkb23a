@@ -18,14 +18,26 @@ public:
         
         LinkedList List;
         Node* current = this->head;
+
+        if (current == nullptr){
+            return List;
+        }
+
+        else if (current -> next == nullptr){
+            List.addHead(current->data);
+            return List;
+        }
         
         // will add nodes to new List and bump them back one each time.
-        while (current != nullptr){
+        else{
+            while (current != nullptr){
             List.addHead(current->data);
             current -> next;
         }
+    
 
         return List;
+    }
     }
 
     Node* head = nullptr;
