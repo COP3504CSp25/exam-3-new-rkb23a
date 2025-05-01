@@ -15,23 +15,23 @@ key of std::string airport_code and value int number_of_passengers. The loadTraf
 */
 std::map<std::string, int> loadTrafficData(const std::string& filename) {
 
-    // std::map<std::string, int> trafficData;
-    // std::ifstream in(filename);
-    // if (!in){
-    //   return;
-    // }
-    // std::stringstream sstream;
+    std::map<std::string, int> trafficData;
+    std::ifstream in(filename);
+    if (!in){
+      return;
+    }
+    std::stringstream sstream;
 
-    // std::string tempStr;
-    // int tempInt;
-    // while (filename, sstream, in){
-    //   in >> tempStr;
-    //   in.ignore(','); 
-    //   in >> tempInt;  
-    //   in.ignore('\n');
-    //   trafficData.insert({tempStr, tempInt});
-    // }
-    // return trafficData;
+    std::string tempStr;
+    int tempInt;
+    while (filename, sstream, in){
+      in >> tempStr;
+      in.ignore(','); 
+      in >> tempInt;  
+      in.ignore('\n');
+      trafficData.insert({tempStr, tempInt});
+    }
+    return trafficData;
 
 }
 
@@ -44,21 +44,21 @@ number, according to the CSV file.
 */
 void updateTrafficData(const std::string& filename, std::map<std::string, int>& dataMap) {
     
-  // std::ifstream in(filename);
-  // if (!in){
-  //   return;
-  // }
+  std::ifstream in(filename);
+  if (!in){
+    return;
+  }
 
-  // std::map<std::string, int> trafficData = loadTrafficData(filename);
+  std::map<std::string, int> trafficData = loadTrafficData(filename);
 
-  // auto it = dataMap.begin();
-  // while (it != dataMap.end()){
-  //   if (dataMap[it->first]){
-  //     dataMap[it->first] = it->second;
-  //       }
-  //   else
-  //   dataMap.insert({it->first, it->second});
-  // }
+  auto it = dataMap.begin();
+  while (it != dataMap.end()){
+    if (dataMap[it->first]){
+      dataMap[it->first] = it->second;
+        }
+    else
+    dataMap.insert({it->first, it->second});
+  }
 
 
   }

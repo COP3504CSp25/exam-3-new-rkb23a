@@ -14,22 +14,22 @@ The consultMax function requires a std::string and a std::map with keys of type 
 */
 float consultMax(const std::string& search_term, const std::map<std::string, std::vector<float>>& data) {
     
-    // float dataFound = 0;
-    // bool isFound = false;
-    // auto it = data.begin();
-    // while (it != data.end() || !isFound ){
-    //     if (it->first == search_term){
-    //         isFound = true;
-    //         dataFound = it->second[0];
-    //         for (int i = 0; i < it->second.size(); i++){
-    //             if (dataFound < it->second[i])
-    //                 dataFound = it->second[i];
-    //         }
+    float dataFound = 0;
+    bool isFound = false;
+    auto it = data.begin();
+    while (it != data.end() || !isFound ){
+        if (it->first == search_term){
+            isFound = true;
+            dataFound = it->second[0];
+            for (int i = 0; i < it->second.size(); i++){
+                if (dataFound < it->second[i])
+                    dataFound = it->second[i];
+            }
 
-    //     }
-    //     if (!isFound) return -1;
-    //     else return dataFound;
-    // }
+        }
+        if (!isFound) return -1;
+        else return dataFound;
+    }
 
 }
 
@@ -42,20 +42,20 @@ The returnMaxMap function accepts a std::map with keys of type std::string and v
 */
 std::map<std::string, float> returnMaxMap(const std::map<std::string, std::vector<float>>& in_map) {
 
-    // std::map<std::string, float> temp;
-    // auto it = in_map.begin();
+    std::map<std::string, float> temp;
+    auto it = in_map.begin();
 
-    // int max = 0;
-    // while(it != in_map.end()){
-    //     max = it->second[0];
-    //         for (int i = 0; i < it->second.size(); i++){
-    //             if (max < it->second[i]) max = it->second[i];
-    //         }
+    int max = 0;
+    while(it != in_map.end()){
+        max = it->second[0];
+            for (int i = 0; i < it->second.size(); i++){
+                if (max < it->second[i]) max = it->second[i];
+            }
 
-    //     temp.emplace(it->first, max);
-    // }
+        temp.emplace(it->first, max);
+    }
 
-    // return temp;
+    return temp;
 
 
     
