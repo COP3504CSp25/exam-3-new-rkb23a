@@ -45,7 +45,7 @@ std::map<std::string, float> returnMaxMap(const std::map<std::string, std::vecto
     std::map<std::string, float> temp;
     auto it = in_map.begin();
 
-    int max = 0;
+    float max = 0;
     while(it != in_map.end()){
         max = it->second[0];
             for (int i = 0; i < it->second.size(); i++){
