@@ -27,12 +27,12 @@ public:
             List.addHead(current->data);
             return List;
         }
-        
+
         // will add nodes to new List and bump them back one each time.
-        else{
+        else {
             while (current != nullptr){
             List.addHead(current->data);
-            current -> next;
+            current = current -> next;
         }
     
 

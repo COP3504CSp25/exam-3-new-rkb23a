@@ -36,7 +36,7 @@ public:
                 if (temp -> data < min){
                     min = temp -> data;
                 }
-                temp->next;
+                temp = temp->next;
             }
             arr[0] = min;
             
@@ -48,7 +48,7 @@ public:
                 if (temp -> data > max){
                     max = temp -> data;
                 }
-                temp->next;
+                temp = temp->next;
             }
             arr[1] = max;
             
@@ -59,7 +59,7 @@ public:
 
             while (temp != nullptr){
                 median += temp -> data;
-                temp->next;
+                temp = temp->next;
                 count++;
             }
             median /= count;
