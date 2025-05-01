@@ -15,7 +15,17 @@ public:
     }
     
     LinkedList reverseList() const {
-        // implement your function here!
+        
+        LinkedList List;
+        Node* current = this->head;
+        
+        // will add nodes to new List and bump them back one each time.
+        while (current != nullptr){
+            List.addHead(current->data);
+            current -> next;
+        }
+
+        return List;
     }
 
     Node* head = nullptr;
