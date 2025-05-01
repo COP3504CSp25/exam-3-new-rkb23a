@@ -45,8 +45,8 @@ public:
             int max = head->data;
 
             while (temp != nullptr){
-                if (temp -> data > min){
-                    min = temp -> data;
+                if (temp -> data > max){
+                    max = temp -> data;
                 }
                 temp->next;
             }
