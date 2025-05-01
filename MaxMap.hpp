@@ -25,11 +25,11 @@ float consultMax(const std::string& search_term, const std::map<std::string, std
                 if (dataFound < it->second[i])
                     dataFound = it->second[i];
             }
-        it++;
         }
+        it++;
+    }
         if (!isFound) return -1;
         else return dataFound;
-    }
 
 }
 
